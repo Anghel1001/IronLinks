@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products | Iron Works</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Iron <span>works</span></h1>
+    <nav>
+      <a href="#about">about us</a> |
+      <a href="products.html">products</a> |
+      <a href="#book">book now</a> |
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <!-- Product Section -->
+  <section class="product-section">
+    <h2>Our Products</h2>
+    <div class="product-container">
+      
+      <!-- Left: Product Image -->
+      <div class="product-image" id="productImage">
+        <img src="gate3d.png" alt="3D Iron Gate Design" id="mainImage">
+        
+        <!-- Overlay QR code -->
+        <div class="qr-overlay" id="qrOverlay">
+          <p>Scan the QR code to access AR</p>
+          <img src="qrcode.png" alt="QR Code">
+        </div>
+
+        <div class="product-icons">
+          <button id="view3d">3D</button>
+          <button id="viewAR">AR</button>
+        </div>
+      </div>
+
+      <!-- Right: Product Details -->
+      <div class="product-details">
+        <div class="tabs">
+          <button class="active">Gates</button>
+          <button>Grills</button>
+          <button>Railings</button>
+        </div>
+
+        <h3>Modular Arc Gate Display (MAGD)</h3>
+        <ul>
+          <li>Wrought Iron (Standard)</li>
+          <li>Powder-Coated (Matte Black)</li>
+          <li>Fully Welded Joints</li>
+        </ul>
+        <p>⭐ 4.1 (72 reviews)</p>
+
+        <div class="quote-box">
+          <h4>Start Your Custom Project</h4>
+          <p>Schedule a free consultation to discuss your custom gate, grill, or railing design.</p>
+          <button class="quote-btn">Request a Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Toggle QR overlay
+    const arBtn = document.getElementById("viewAR");
+    const qrOverlay = document.getElementById("qrOverlay");
+    const mainImage = document.getElementById("mainImage");
+
+    arBtn.addEventListener("click", () => {
+      qrOverlay.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
