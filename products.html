@@ -6,6 +6,9 @@
   <title>Our Products | Iron Works</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Add model-viewer script -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -13,7 +16,7 @@
   <header>
     <h1>Iron <span>works</span></h1>
     <nav>
-      <a href="#about">about us</a> |
+      <a href="index.html">about us</a> |
       <a href="products.html">products</a> |
       <a href="#book">book now</a> |
       <a href="#contact">contact</a>
@@ -27,8 +30,19 @@
       
       <!-- Left: Product Image -->
       <div class="product-image" id="productImage">
-        <img src="gate3d.png" alt="3D Iron Gate Design" id="mainImage">
+        <img src="hompage_photos/Gate_2.jpg" alt="3D Iron Gate Design" id="mainImage">
         
+        <!-- Add 3D model -->
+        <model-viewer
+        id="wall3D"
+        src="3D_Demo/wall.glb"
+        alt="3D Iron Work Model"
+        auto-rotate
+        camera-controls
+        style="width: 100%; height: 500px; display: none;"
+      ></model-viewer>
+      
+
         <!-- Overlay QR code -->
         <div class="qr-overlay" id="qrOverlay">
           <p>Scan the QR code to access AR</p>
@@ -74,6 +88,22 @@
 
     arBtn.addEventListener("click", () => {
       qrOverlay.classList.toggle("show");
+    });
+
+    // Toggle 3D model view
+    const view3dBtn = document.getElementById("view3d");
+    const model3D = document.getElementById("wall3D");
+
+    view3dBtn.addEventListener("click", () => {
+      if (model3D.style.display === "none") {
+        mainImage.style.display = "none";
+        model3D.style.display = "block";
+        view3dBtn.textContent = "Image";
+      } else {
+        model3D.style.display = "none";
+        mainImage.style.display = "block";
+        view3dBtn.textContent = "3D";
+      }
     });
   </script>
 </body>
